@@ -31,4 +31,6 @@ For a development setup, please check out this [YouTube video]
 ## Test Drive
 
 You can test drive CSNS at http://cs3.calstatela.edu:4046/csns2/. Please
-contact Chengyu Sun at csun@calstatela.edu to request an account.
+contact me at sguttul@calstatela.edu to request an account.
+
+Sudarshan Guttula
