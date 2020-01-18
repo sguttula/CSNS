@@ -1,21 +1,3 @@
-/*
- * This file is part of the CSNetwork Services (CSNS) project.
- * 
- * Copyright 2013-2016, Chengyu Sun (csun@calstatela.edu).
- * 
- * CSNS is free software: you can redistribute it and/or modify it under the
- * terms of the GNU Affero General Public License as published by the Free
- * Software Foundation, either version 3 of the License, or (at your option)
- * any later version.
- * 
- * CSNS is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for
- * more details.
- * 
- * You should have received a copy of the GNU Affero General Public License
- * along with CSNS. If not, see http://www.gnu.org/licenses/agpl.html.
- */
 package csns.importer.parser.csula;
 
 import java.util.ArrayList;
@@ -28,11 +10,6 @@ import csns.importer.ImportedUser;
 import csns.importer.parser.UserListParser;
 import csns.model.academics.Term;
 
-/**
- * This parser handles data copy&pasted from an Excel file produced from GET
- * data. The format is expected to be "term cin first_name last_name ..." where
- * term is a 4-digit code. Currently we only process the first four fields.
- */
 @Component("studentsParser")
 public class StudentsParserImpl implements UserListParser {
 
