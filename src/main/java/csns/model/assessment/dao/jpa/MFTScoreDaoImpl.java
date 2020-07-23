@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import csns.model.academics.Department;
 import csns.model.assessment.MFTScore;
 import csns.model.assessment.dao.MFTScoreDao;
-import csns.model.core.User;
+import csns.model.core.User; 
 
 @Repository
 public class MFTScoreDaoImpl implements MFTScoreDao {
