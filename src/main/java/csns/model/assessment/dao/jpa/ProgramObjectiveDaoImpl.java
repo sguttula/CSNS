@@ -13,7 +13,7 @@ import csns.model.assessment.dao.ProgramObjectiveDao;
 public class ProgramObjectiveDaoImpl implements ProgramObjectiveDao {
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private EntityManager entityManager; 
 
     @Override
     public ProgramObjective getProgramObjective( Long id )
