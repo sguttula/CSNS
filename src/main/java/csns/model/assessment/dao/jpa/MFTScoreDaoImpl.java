@@ -17,7 +17,7 @@ import csns.model.core.User;
 @Repository
 public class MFTScoreDaoImpl implements MFTScoreDao {
 
-    @PersistenceContext
+    @PersistenceContext 
     private EntityManager entityManager;
 
     @Override
