@@ -9,7 +9,7 @@ import csns.model.assessment.Rubric;
 import csns.model.assessment.RubricEvaluation;
 
 public interface RubricEvaluationDao {
-
+ 
     RubricEvaluation getRubricEvaluation( Long id );
 
     List<RubricEvaluationStats> getRubricEvaluationStats( Rubric rubric,
