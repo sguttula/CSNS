@@ -16,7 +16,7 @@ public interface RubricSubmissionDao {
 
     List<RubricSubmission> getRubricSubmissions( User student,
         Section section );
-
+ 
     RubricSubmission saveRubricSubmission( RubricSubmission submission );
 
 }
