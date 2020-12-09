@@ -7,15 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.servlet.support.RequestDataValueProcessor;
 
-/**
- * This processor is used to add the conversation id as a hidden field on the
- * form If the conversation id exists on the request.
- * 
- * (Updated for Spring 4 by cysun)
- * 
- * @author Nimo Naamani http://duckranger.com
- */
-
 public class ConversationIdRequestProcessor
     implements RequestDataValueProcessor {
 
