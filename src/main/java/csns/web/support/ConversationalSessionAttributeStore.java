@@ -14,33 +14,6 @@ import org.springframework.web.bind.support.SessionAttributeStore;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 
-/**
- * This class handles how session scoped model attributes are stored and
- * retrieved from the HttpSession. This implementation uses a timestamp to
- * distinguish multiple command objects of the same type. This is needed for
- * users editing the same entity on multiple tabs of a browser.
- * 
- * Source:
- * http://forum.springsource.org/showthread.php?95016-Using-Session-Model
- * -Attributes-With-Multiple-Browser-Tabs-Patch
- * 
- * Note: Conversation management was on the agenda for 3.1 then got moved to 3.2
- * but doesn't seem like it will make it there.
- * 
- * @author MJones
- * @version Sep 2, 2010
- * 
- * 
- *          Note 2: This is a modification of the code in the URL because I
- *          don't want to use a tag lib. Therefore - my implementation creates a
- *          conversation map on the session - to allow each conversation to have
- *          its own store without adding the cid on the object name. In this way
- *          - the cid and the session attributes are kept separated.
- * 
- * @author Nimo Naamani
- * http://duckranger.com
- */
-
 public class ConversationalSessionAttributeStore implements SessionAttributeStore, InitializingBean {
 
     @Autowired
@@ -125,13 +98,6 @@ public class ConversationalSessionAttributeStore implements SessionAttributeStor
 	return conversationMap;
     }
 
-    /**
-     * Get the session's conversations map.
-     * 
-     * @param request
-     *            - the request
-     * @return - LinkedHashMap of all the conversations and their maps
-     */
     private LinkedHashMap<String, Map<String, Object>> getSessionConversationsMap(WebRequest request) {
 	@SuppressWarnings("unchecked")
 	LinkedHashMap<String, Map<String, Object>> sessionMap = (LinkedHashMap<String, Map<String, Object>>) request.getAttribute(
@@ -143,18 +109,6 @@ public class ConversationalSessionAttributeStore implements SessionAttributeStor
 	return sessionMap;
     }
 
-    /**
-     * Store an object on the session. If the configured maximum number of live
-     * conversations to keep is reached - clear out the oldest conversation. (If
-     * max number is configured as 0 - no removal will happen)
-     * 
-     * @param request
-     *            - the web request
-     * @param attributeName
-     *            - the name of the attribute (from @SessionAttributes)
-     * @param attributeValue
-     *            - the value to store
-     */
     private void store(WebRequest request, String attributeName, Object attributeValue, String cId) {
 	LinkedHashMap<String, Map<String, Object>> sessionConversationsMap = getSessionConversationsMap(request);
 	if (keepAliveConversations > 0 && sessionConversationsMap.size() >= keepAliveConversations
@@ -191,9 +145,6 @@ public class ConversationalSessionAttributeStore implements SessionAttributeStor
 	return cid;
     }
 
-    /**
-     * Required for wiring the RequestMappingHandlerAdapter
-     */
     @Override
     public void afterPropertiesSet() throws Exception {
 	requestMappingHandlerAdapter.setSessionAttributeStore(this);
