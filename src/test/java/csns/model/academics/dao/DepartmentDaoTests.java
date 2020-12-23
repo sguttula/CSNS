@@ -7,12 +7,6 @@ import org.testng.annotations.Test;
 
 import csns.model.academics.Department;
 
-/**
- * To test lazy loaded collections (e.g. administrators etc. in Department), the
- * test class must inherit AbstractTransactionalTestNGSpringContextTests instead
- * of AbstractTestNGSpringContextTests so Spring will run each test method in a
- * transaction and keep the entity manager open until the method finishes.
- */
 @Test(groups = "DepartmentDaoTests")
 @ContextConfiguration(locations = "classpath:testApplicationContext.xml")
 public class DepartmentDaoTests extends
