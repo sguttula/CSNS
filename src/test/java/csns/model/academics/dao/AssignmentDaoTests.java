@@ -24,12 +24,6 @@ public class AssignmentDaoTests extends
         assert assignmentDao.getAssignment( 1000500L ) != null;
     }
 
-    /**
-     * To test lazy loading of collections like submissions, the test class must
-     * extend AbstractTransactionalTestNGSpringContextTests instead of
-     * AbstractTestNGSpringContextTests so Spring will run each test method in a
-     * transaction and keep the entity manager open until the method finishes.
-     */
     @Test(dependsOnMethods = "getAssignment")
     public void loadSubmissions()
     {
