@@ -5,7 +5,6 @@ set client_min_messages=WARNING;
 
 create sequence hibernate_sequence minvalue 2000000;
 
--- This sequence is used to generate peudo-id's for query results.
 create sequence result_sequence cycle;
 
 ------------------------------
