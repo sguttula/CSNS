@@ -1,4 +1,4 @@
--- This script removes everything in a CSNS database.
+-- This script removes everything in a CSNS database. 
 
 set client_min_messages=WARNING;
 
